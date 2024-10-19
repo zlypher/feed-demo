@@ -11,7 +11,7 @@ export const BottomNavigation = () => {
     <nav className=" h-[80px] bg-white w-full bottom-0">
       <ul className="flex h-[80px] flex-row w-full justify-around items-center">
         <li>
-          <Link href="/">
+          <Link href="/" aria-label="Zum Feed">
             <HomeIcon />
           </Link>
         </li>
