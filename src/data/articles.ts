@@ -1,5 +1,3 @@
-import { slugify } from "@/utils/slugify";
-
 export type DstArticle = {
   id: string;
   headline: string;
@@ -108,5 +106,5 @@ export const getAllArticles = (): DstArticle[] => {
 };
 
 export const getArticleBySlug = (slug: string): DstArticle | undefined => {
-  return MOCK_ARTICLES.find((article) => slug === slugify(article.headline));
+  return MOCK_ARTICLES.find((article) => slug === article.id);
 };

@@ -2,7 +2,6 @@ import { DstArticle } from "@/data/articles";
 import { Categories } from "./categories";
 import { formatDatetime } from "@/utils/format-datetime";
 import Link from "next/link";
-import { slugify } from "@/utils/slugify";
 import { ImageWithFallback } from "./image-with-fallback";
 
 interface IFeedItemProps {
@@ -12,7 +11,7 @@ interface IFeedItemProps {
 export const FeedItem = ({ article }: IFeedItemProps) => {
   return (
     <article className="bg-slate-200">
-      <Link href={`/article/${slugify(article.headline)}`}>
+      <Link href={`/article/${article.id}`}>
         <header className="w-full aspect-video relative mb-2">
           <ImageWithFallback
             src={article.headerImageUrl}
