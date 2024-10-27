@@ -20,7 +20,7 @@ const MOCK_ARTICLES: DstArticle[] = [
     publicationDate: "2024-10-27T15:08:00",
     categories: ["International", "US"],
     headerImageUrl:
-      "die-us-demokraten-treten-schlechten-vorzeichen-mit-ihren-all-stars-entgegen.jpg",
+      "/die-us-demokraten-treten-schlechten-vorzeichen-mit-ihren-all-stars-entgegen.jpg",
   },
   {
     id: "hello-kitty-wird-50-das-milliardengeschaeft-mit-kindertraeumen",
@@ -30,7 +30,7 @@ const MOCK_ARTICLES: DstArticle[] = [
     publicationDate: "2024-10-26T12:36:00",
     categories: ["Wirtschaft", "Unternehmen"],
     headerImageUrl:
-      "hello-kitty-wird-50-das-milliardengeschaeft-mit-kindertraeumen.jpg",
+      "/hello-kitty-wird-50-das-milliardengeschaeft-mit-kindertraeumen.jpg",
   },
   {
     id: "test-article-with-invalid-header-image",
@@ -39,7 +39,7 @@ const MOCK_ARTICLES: DstArticle[] = [
     text: "This is simply a test article with an invalid Header Image",
     publicationDate: "2024-10-25T12:15:00",
     categories: ["Test"],
-    headerImageUrl: "-invalid-",
+    headerImageUrl: "/-invalid-",
   },
   {
     id: "forderung-aus-der-start-up-szene-zugewanderte-gruender-sollen-weniger-steuern-zahlen",
@@ -50,7 +50,7 @@ const MOCK_ARTICLES: DstArticle[] = [
     publicationDate: "2024-10-23T05:00:00",
     categories: ["Wirtschaft", "Unternehmen", "Start up"],
     headerImageUrl:
-      "forderung-aus-der-start-up-szene-zugewanderte-gruender-sollen-weniger-steuern-zahlen.jpg",
+      "/forderung-aus-der-start-up-szene-zugewanderte-gruender-sollen-weniger-steuern-zahlen.jpg",
   },
   {
     id: "skifahren-zwischen-lust-frust-und-zukunftsangst",
@@ -59,7 +59,7 @@ const MOCK_ARTICLES: DstArticle[] = [
     text: "Der Countdown zum Wedelspaß auf Österreichs Skipisten läuft, auch der für die Professionellen, ganz Schnellen. Mit einem Frauenriesentorlauf beginnt am 26. Oktober in Sölden die heurige Weltcupsaison; tags darauf gehen am Rettenbachferner oberhalb der Tiroler Tourismushochburg die Herren an den Start. Weil der 26. Oktober Nationalfeiertag ist, hat das durchaus Symbolkraft: Schließlich wird hierzulande Skifahren als Nationalsport begriffen. Aber ist es das noch?",
     publicationDate: "2024-10-17T12:32:00",
     categories: ["Wirtschaft", "Unternehmen"],
-    headerImageUrl: "skifahren-zwischen-lust-frust-und-zukunftsangst.jpg",
+    headerImageUrl: "/skifahren-zwischen-lust-frust-und-zukunftsangst.jpg",
   },
   {
     id: "wuchteln-aus-zwei-fu223ballerleben",
@@ -69,7 +69,7 @@ const MOCK_ARTICLES: DstArticle[] = [
     text: `Hans Krankl ärgert sich. Seine Enkeltochter spricht fast ausschließlich Hochdeutsch, so wie alle in ihrer Schule. Sie klingen wie Piefke, sagt er. Daran seien vor allem soziale Medien schuld. Krankl will, dass das Wienerische erhalten bleibt. "Dafür kämpfe ich wie ein Löwe", sagt er. Ein Hans Krankl kapiert Dinge beispielsweise nicht, er kneißt sie.`,
     publicationDate: "2024-10-26T20:00:00",
     categories: ["Kultur", "Literatur"],
-    headerImageUrl: "wuchteln-aus-zwei-fu223ballerleben.jpg",
+    headerImageUrl: "/wuchteln-aus-zwei-fu223ballerleben.jpg",
   },
   {
     id: "wien-stockt-budget-fuer-strauss-jahr-2025-um-zwei-millionen-euro-auf",
@@ -80,7 +80,7 @@ const MOCK_ARTICLES: DstArticle[] = [
     publicationDate: "2024-10-23T14:43:00",
     categories: ["Kultur", "Musik"],
     headerImageUrl:
-      "wien-stockt-budget-fuer-strauss-jahr-2025-um-zwei-millionen-euro-auf.jpg",
+      "/wien-stockt-budget-fuer-strauss-jahr-2025-um-zwei-millionen-euro-auf.jpg",
   },
   {
     id: "die-unerwartete-wiederbelebung-der-supernova-aus-dem-jahr-1181",
@@ -90,7 +90,7 @@ const MOCK_ARTICLES: DstArticle[] = [
     publicationDate: "2024-10-25T09:00:00",
     categories: ["Wissenschaft"],
     headerImageUrl:
-      "die-unerwartete-wiederbelebung-der-supernova-aus-dem-jahr-1181.jpg",
+      "/die-unerwartete-wiederbelebung-der-supernova-aus-dem-jahr-1181.jpg",
   },
   {
     id: "leben-auf-dem-mars-koennte-sich-im-eis-verstecken",
@@ -99,7 +99,7 @@ const MOCK_ARTICLES: DstArticle[] = [
     text: "So wüst und trocken der Mars heute auch erscheinen mag, es gab eine Zeit, da ging es dort viel lebensfreundlicher zu. Spuren von großen Seen, vielleicht sogar Meeren, uralte Flussverläufe, Canyons und die Deltas großer Ströme – der heutige Mars ist voller Hinweise darauf, dass hier einst Wasser geflossen ist. Mittlerweile konnte man diese feuchte Ära auf eine Zeit vor etwa vier Milliarden Jahren eingrenzen.",
     publicationDate: "2024-10-22T12:04:00",
     categories: ["Wissenschaft", "Weltraum"],
-    headerImageUrl: "leben-auf-dem-mars-koennte-sich-im-eis-verstecken.jpg",
+    headerImageUrl: "/leben-auf-dem-mars-koennte-sich-im-eis-verstecken.jpg",
   },
 ];
 

@@ -3,6 +3,7 @@ import { Categories } from "./categories";
 import { formatDatetime } from "@/utils/format-datetime";
 import Link from "next/link";
 import { slugify } from "@/utils/slugify";
+import { ImageWithFallback } from "./image-with-fallback";
 
 interface IFeedItemProps {
   article: DstArticle;
@@ -10,18 +11,27 @@ interface IFeedItemProps {
 
 export const FeedItem = ({ article }: IFeedItemProps) => {
   return (
-    <article className="p-4">
-      <header className="mb-2">
-        <img src="https://placehold.co/600x400/EEE/31343C" />
-      </header>
+    <article className="bg-slate-200">
       <Link href={`/article/${slugify(article.headline)}`}>
-        <h2 className="text-xl mb-2">{article.headline}</h2>
+        <header className="w-full aspect-video relative mb-2">
+          <ImageWithFallback
+            src={article.headerImageUrl}
+            alt="Normally, we would add a description of the image content here for Screen Reader, so that visually impaired users can also profit from the content."
+            fill
+            fallbackSrc="/fallback-image.svg"
+          />
+        </header>
+        <div className="p-4 flex flex-col space-y-2">
+          <Categories categories={article.categories} />
+          <time
+            dateTime={article.publicationDate}
+            className="text-slate-700 text-sm"
+          >
+            {formatDatetime(new Date(article.publicationDate))}
+          </time>
+          <h2 className="text-lg font-bold mb-2">{article.headline}</h2>
+        </div>
       </Link>
-      <time dateTime={article.publicationDate}>
-        {formatDatetime(new Date(article.publicationDate))}
-      </time>
-      <Categories categories={article.categories} />
-      <p>{article.text}</p>
     </article>
   );
 };

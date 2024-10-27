@@ -4,7 +4,7 @@ interface ICategoriesProps {
 
 export const Categories = ({ categories }: ICategoriesProps) => {
   return (
-    <ul>
+    <ul className="flex flex-row gap-4 font-bold text-slate-800">
       {categories.map((category) => (
         <li key={category}>{category}</li>
       ))}
