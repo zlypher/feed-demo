@@ -3,6 +3,7 @@ import { Categories } from "@/components/categories";
 import { ImageWithFallback } from "@/components/image-with-fallback";
 import { getArticleBySlug } from "@/data/articles";
 import { formatDatetime } from "@/utils/format-datetime";
+import { notFound } from "next/navigation";
 
 interface IArticleProps {
   params: {
@@ -14,8 +15,7 @@ export default function Article({ params }: IArticleProps) {
   const article = getArticleBySlug(params.slug);
 
   if (!article) {
-    // TODO: Show 404
-    return null;
+    notFound();
   }
 
   return (
