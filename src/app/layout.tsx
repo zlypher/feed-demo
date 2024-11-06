@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description:
     "This is a simple feed demo project. It include a feed of different articles and detail pages for individual articles.",
   robots: { index: false, follow: false },
+  openGraph: {
+    title: "Feed Demo",
+    description:
+      "This is a simple feed demo project. It include a feed of different articles and detail pages for individual articles.",
+    type: "website",
+    images: "/feed-demo.png",
+    url: "/",
+  },
 };
 
 export default function RootLayout({
