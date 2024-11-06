@@ -56,21 +56,23 @@ export default async function ArticlePage({ params }: IArticleProps) {
   }
 
   return (
-    <div className="overflow-y-auto flex-1">
+    <div className="overflow-y-auto flex-1 bg-white">
       <header className="w-full bg-white p-4 flex items-center">
         <BackButton />
       </header>
-      <main className="p-4 flex-1">
-        <header className="mb-4">
-          <h1 className="mb-2 text-2xl font-bold">{article.headline}</h1>
+      <main className="p-4 flex-1 ">
+        <header>
+          <h1 className="mb-2 text-2xl font-bold text-gray-800">
+            {article.headline}
+          </h1>
+          <Categories className="mb-2" categories={article.categories} />
           <time
             dateTime={article.publicationDate}
-            className="text-slate-700 text-sm"
+            className="block text-gray-500 text-sm mb-8"
           >
             {formatDatetime(new Date(article.publicationDate))}
           </time>
-          <Categories className="mb-2" categories={article.categories} />
-          <div className="w-full aspect-video relative mb-4">
+          <div className="w-full aspect-video relative mb-8">
             <ImageWithFallback
               src={article.headerImageUrl}
               alt="Normally, we would add a description of the image content here for Screen Reader, so that visually impaired users can also profit from the content."
@@ -79,7 +81,7 @@ export default async function ArticlePage({ params }: IArticleProps) {
             />
           </div>
         </header>
-        <p>{article.text}</p>
+        <p className="text-gray-700">{article.text}</p>
       </main>
     </div>
   );
