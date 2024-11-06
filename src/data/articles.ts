@@ -1,4 +1,4 @@
-export type DstArticle = {
+export type Article = {
   id: string;
   headline: string;
   author: string;
@@ -8,7 +8,7 @@ export type DstArticle = {
   headerImageUrl: string;
 };
 
-const MOCK_ARTICLES: DstArticle[] = [
+const MOCK_ARTICLES: Article[] = [
   {
     id: "die-us-demokraten-treten-schlechten-vorzeichen-mit-ihren-all-stars-entgegen",
     headline:
@@ -101,10 +101,10 @@ const MOCK_ARTICLES: DstArticle[] = [
   },
 ];
 
-export const getAllArticles = (): DstArticle[] => {
+export const getAllArticles = (): Article[] => {
   return [...MOCK_ARTICLES];
 };
 
-export const getArticleBySlug = (slug: string): DstArticle | undefined => {
-  return MOCK_ARTICLES.find((article) => slug === article.id);
+export const getArticleById = (id: string): Article | undefined => {
+  return MOCK_ARTICLES.find((article) => id === article.id);
 };

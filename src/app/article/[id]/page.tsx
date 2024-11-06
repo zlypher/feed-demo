@@ -1,19 +1,19 @@
 import { BackButton } from "@/components/back-button";
 import { Categories } from "@/components/categories";
 import { ImageWithFallback } from "@/components/image-with-fallback";
-import { getArticleBySlug } from "@/data/articles";
+import { Article, getAllArticles, getArticleById } from "@/data/articles";
 import { formatDatetime } from "@/utils/format-datetime";
 import { defaultMetadata } from "@/utils/metadata";
 import { notFound } from "next/navigation";
 
 interface IArticleProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{
+    id: string;
+  }>;
 }
 
 export async function generateMetadata({ params }: IArticleProps) {
-  const article = getArticleBySlug(params.slug);
+  const article = getArticleById((await params).id);
   if (!article) {
     return null;
   }
@@ -35,8 +35,21 @@ export async function generateMetadata({ params }: IArticleProps) {
   };
 }
 
-export default function Article({ params }: IArticleProps) {
-  const article = getArticleBySlug(params.slug);
+// Revalidation time in seconds. Static content is potentially regenerated after this time.
+export const revalidate = 60;
+
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const articles: Article[] = getAllArticles();
+
+  return articles.map((article) => ({
+    id: article.id,
+  }));
+}
+
+export default async function ArticlePage({ params }: IArticleProps) {
+  const article = getArticleById((await params).id);
 
   if (!article) {
     notFound();

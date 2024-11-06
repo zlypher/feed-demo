@@ -1,11 +1,11 @@
-import { DstArticle } from "@/data/articles";
+import { Article } from "@/data/articles";
 import { Categories } from "./categories";
 import { formatDatetime } from "@/utils/format-datetime";
 import Link from "next/link";
 import { ImageWithFallback } from "./image-with-fallback";
 
 interface IFeedItemProps {
-  article: DstArticle;
+  article: Article;
 }
 
 export const FeedItem = ({ article }: IFeedItemProps) => {

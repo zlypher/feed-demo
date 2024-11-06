@@ -1,8 +1,8 @@
-import { DstArticle } from "@/data/articles";
+import { Article } from "@/data/articles";
 import { FeedItem } from "./feed-item";
 
 interface IFeedProps {
-  articles: DstArticle[];
+  articles: Article[];
 }
 
 export const Feed = ({ articles }: IFeedProps) => {
