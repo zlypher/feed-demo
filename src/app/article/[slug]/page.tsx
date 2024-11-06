@@ -3,11 +3,35 @@ import { Categories } from "@/components/categories";
 import { ImageWithFallback } from "@/components/image-with-fallback";
 import { getArticleBySlug } from "@/data/articles";
 import { formatDatetime } from "@/utils/format-datetime";
+import { defaultMetadata } from "@/utils/metadata";
 import { notFound } from "next/navigation";
 
 interface IArticleProps {
   params: {
     slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: IArticleProps) {
+  const article = getArticleBySlug(params.slug);
+  if (!article) {
+    return null;
+  }
+
+  const title = `${article.headline} | Feed Demo`;
+  const domain = process.env.DOMAIN ?? "http://localhost:300/";
+
+  return {
+    ...defaultMetadata,
+    title,
+    description: article.headline, // Ideally, we would use a short summary here
+    openGraph: {
+      ...defaultMetadata.openGraph,
+      url: `${domain}article/${article.id}`,
+      title,
+      description: article.headline, // Ideally, we would use a short summary here
+      images: article.headerImageUrl,
+    },
   };
 }
 

@@ -1,21 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { BottomNavigation } from "@/components/bottom-navigation";
+import { defaultMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Feed Demo",
-  description:
-    "This is a simple feed demo project. It include a feed of different articles and detail pages for individual articles.",
-  robots: { index: false, follow: false },
-  openGraph: {
-    url: process.env.DOMAIN ?? "http://localhost:300",
-    title: "Feed Demo",
-    description:
-      "This is a simple feed demo project. It include a feed of different articles and detail pages for individual articles.",
-    type: "website",
-    images: "/feed-demo.png",
-  },
-};
+export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
