@@ -1,3 +1,5 @@
+import { useQuery } from "@tanstack/react-query";
+
 export type Article = {
   id: string;
   headline: string;
@@ -107,4 +109,16 @@ export const getAllArticles = (): Article[] => {
 
 export const getArticleById = (id: string): Article | undefined => {
   return MOCK_ARTICLES.find((article) => id === article.id);
+};
+
+export const fetchArticles = async (): Promise<Article[]> => {
+  const response = await fetch("/api/v1/articles");
+  return await response.json();
+};
+
+export const useArticles = () => {
+  return useQuery({
+    queryKey: ["articles"],
+    queryFn: () => fetchArticles(),
+  });
 };

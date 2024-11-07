@@ -4,11 +4,11 @@ import { formatDatetime } from "@/utils/format-datetime";
 import Link from "next/link";
 import { ImageWithFallback } from "./image-with-fallback";
 
-interface IFeedItemProps {
+interface IArticleListItemProps {
   article: Article;
 }
 
-export const FeedItem = ({ article }: IFeedItemProps) => {
+export const ArticleListItem = ({ article }: IArticleListItemProps) => {
   return (
     <article className="bg-white rounded-sm overflow-hidden">
       <Link href={`/article/${article.id}`}>
