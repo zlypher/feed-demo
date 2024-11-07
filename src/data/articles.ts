@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-export type Article = {
+export type TArticle = {
   id: string;
   headline: string;
   author: string;
@@ -10,7 +10,7 @@ export type Article = {
   headerImageUrl: string;
 };
 
-const MOCK_ARTICLES: Article[] = [
+const MOCK_ARTICLES: TArticle[] = [
   {
     id: "die-us-demokraten-treten-schlechten-vorzeichen-mit-ihren-all-stars-entgegen",
     headline:
@@ -103,15 +103,15 @@ const MOCK_ARTICLES: Article[] = [
   },
 ];
 
-export const getAllArticles = (): Article[] => {
+export const getAllArticles = (): TArticle[] => {
   return [...MOCK_ARTICLES];
 };
 
-export const getArticleById = (id: string): Article | undefined => {
+export const getArticleById = (id: string): TArticle | undefined => {
   return MOCK_ARTICLES.find((article) => id === article.id);
 };
 
-export const fetchArticles = async (): Promise<Article[]> => {
+export const fetchArticles = async (): Promise<TArticle[]> => {
   const response = await fetch("/api/v1/articles");
   return await response.json();
 };

@@ -9,8 +9,12 @@ export const BackButton = () => {
   }, []);
 
   return (
-    <button onClick={onBack}>
-      <ArrowLeftIcon />
+    <button
+      onClick={onBack}
+      aria-label="Zurück zur vorherigen Seite"
+      className="p-2"
+    >
+      <ArrowLeftIcon className="w-5 h-5" />
     </button>
   );
 };

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navigation } from "@/components/navigation";
+import { Navigation } from "@/components/common/navigation";
 import { defaultMetadata } from "@/utils/metadata";
-import { ReactQueryClientProvider } from "@/components/react-query-client-provider";
+import { ReactQueryClientProvider } from "@/components/common/react-query-client-provider";
 
 export const metadata: Metadata = defaultMetadata;
 

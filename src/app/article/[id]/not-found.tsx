@@ -1,6 +1,6 @@
 "use client";
 
-import { BackButton } from "@/components/back-button";
+import { BackButton } from "@/components/common/back-button";
 import { FileX2Icon } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArticleList } from "../article-list";
+import { ArticleList } from "../article-list/article-list";
 
 export default function FeedPage() {
   return (
