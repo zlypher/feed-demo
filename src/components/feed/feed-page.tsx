@@ -4,7 +4,7 @@ import { ArticleList } from "../article-list/article-list";
 
 export default function FeedPage() {
   return (
-    <main className="overflow-y-auto flex-1">
+    <main className="overflow-y-auto flex-1 flex flex-col">
       <ArticleList />
     </main>
   );

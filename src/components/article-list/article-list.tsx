@@ -2,6 +2,7 @@ import { useArticles } from "@/data/articles";
 import { ArticleListItem } from "../article-list/article-list-item";
 import { PropsWithChildren } from "react";
 import { ArticleListItemPlaceholder } from "./article-list-item-placeholder";
+import { ArticleListError } from "./article-list-error";
 
 export const ArticleList = () => {
   const { data: articles, isLoading, isError } = useArticles();
@@ -16,7 +17,7 @@ export const ArticleList = () => {
   }
 
   if (isError || !articles) {
-    return "error";
+    return <ArticleListError />;
   }
 
   return (
