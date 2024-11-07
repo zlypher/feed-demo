@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <ReactQueryClientProvider>
       <html lang="de">
-        <body className="bg-gray-200 h-screen flex flex-col">
+        <body className="bg-gray-200 pb-16 min-h-screen flex flex-col">
           {children}
           <Navigation />
         </body>
