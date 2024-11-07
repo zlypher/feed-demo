@@ -6,9 +6,13 @@ import { ImageWithFallback } from "../common/image-with-fallback";
 
 interface IArticleListItemProps {
   article: TArticle;
+  priority?: boolean;
 }
 
-export const ArticleListItem = ({ article }: IArticleListItemProps) => {
+export const ArticleListItem = ({
+  article,
+  priority,
+}: IArticleListItemProps) => {
   return (
     <article className="bg-white rounded-sm overflow-hidden">
       <Link href={`/article/${article.id}`}>
@@ -18,6 +22,8 @@ export const ArticleListItem = ({ article }: IArticleListItemProps) => {
             alt="Normally, we would add a description of the image content here for Screen Reader, so that visually impaired users can also profit from the content."
             fill
             fallbackSrc="/fallback-image.svg"
+            loading={priority ? "eager" : "lazy"}
+            priority={priority}
           />
         </header>
         <div className="p-4 flex flex-col">

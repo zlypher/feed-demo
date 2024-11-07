@@ -6,6 +6,9 @@ import { ArticleListError } from "./article-list-error";
 
 export const ArticleList = () => {
   const { data: articles, isLoading, isError } = useArticles();
+  // Define the number of articles which are most likely immediately visible and
+  // should load the image with high priority.
+  const numPriorityImages = 3;
 
   if (isLoading) {
     return (
@@ -22,8 +25,12 @@ export const ArticleList = () => {
 
   return (
     <ArticleListWrapper>
-      {articles.map((article) => (
-        <ArticleListItem key={article.id} article={article} />
+      {articles.map((article, idx) => (
+        <ArticleListItem
+          key={article.id}
+          article={article}
+          priority={idx < numPriorityImages}
+        />
       ))}
     </ArticleListWrapper>
   );
