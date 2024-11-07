@@ -16,10 +16,10 @@ export default function ArticleNotFound({
   }, [error]);
 
   return (
-    <div className="overflow-y-auto flex-1">
-      <header className="w-full bg-white p-4 flex items-center">
+    <div className="overflow-y-auto flex-1" data-testid="not-found">
+      <div className="mt-2 ml-2 rounded-full bg-white inline-flex">
         <BackButton />
-      </header>
+      </div>
       <main className="p-4 flex-1 flex flex-col items-center">
         <h1 className="mt-8 mb-8 text-2xl font-bold text-center">
           Wir haben den gewünschten Artikel leider nicht gefunden!
