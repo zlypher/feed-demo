@@ -9,7 +9,7 @@ export const Categories = ({ categories, className }: ICategoriesProps) => {
   return (
     <ul
       className={cn(
-        `flex flex-row gap-4 font-semibold text-sky-500`,
+        `flex flex-row gap-4 font-semibold text-sky-700`,
         className
       )}
     >

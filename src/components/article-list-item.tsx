@@ -1,11 +1,11 @@
-import { Article } from "@/data/articles";
+import { TArticle } from "@/data/articles";
 import { Categories } from "./categories";
 import { formatDatetime } from "@/utils/format-datetime";
 import Link from "next/link";
 import { ImageWithFallback } from "./image-with-fallback";
 
 interface IArticleListItemProps {
-  article: Article;
+  article: TArticle;
 }
 
 export const ArticleListItem = ({ article }: IArticleListItemProps) => {
