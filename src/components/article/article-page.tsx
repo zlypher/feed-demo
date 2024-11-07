@@ -22,6 +22,8 @@ export default async function ArticlePage({ article }: IArticlePageProps) {
           fallbackSrc="/fallback-image.svg"
           className="object-cover"
           loading="eager"
+          data-testid="header-image"
+          priority
         />
       </div>
       <main className="p-4 flex-1">
@@ -39,7 +41,9 @@ export default async function ArticlePage({ article }: IArticlePageProps) {
             {formatDatetime(new Date(article.publicationDate))}
           </time>
         </aside>
-        <p className="text-gray-700">{article.text}</p>
+        <div data-testid="content">
+          <p className="text-gray-700">{article.text}</p>
+        </div>
       </main>
     </div>
   );

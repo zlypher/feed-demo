@@ -13,6 +13,7 @@ export const BackButton = () => {
       onClick={onBack}
       aria-label="Zurück zur vorherigen Seite"
       className="p-2"
+      data-testid="back-button"
     >
       <ArrowLeftIcon className="w-5 h-5" />
     </button>

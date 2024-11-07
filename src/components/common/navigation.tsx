@@ -9,7 +9,7 @@ import { NavItem } from "./nav-item";
 export const Navigation = () => {
   return (
     <nav className=" h-[64px] bg-white w-full bottom-0 shadow-gray-900 shadow-sm">
-      <ul className="flex h-[64px] flex-row w-full justify-around items-center">
+      <ul className="flex h-[64px] flex-row w-full justify-around items-center px-6">
         <NavItem href="/" label="Zum Feed">
           <HomeIcon />
         </NavItem>
