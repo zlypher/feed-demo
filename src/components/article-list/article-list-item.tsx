@@ -1,8 +1,8 @@
 import { TArticle } from "@/data/articles";
-import { Categories } from "./categories";
+import { Categories } from "../article/categories";
 import { formatDatetime } from "@/utils/format-datetime";
 import Link from "next/link";
-import { ImageWithFallback } from "./image-with-fallback";
+import { ImageWithFallback } from "../common/image-with-fallback";
 
 interface IArticleListItemProps {
   article: TArticle;

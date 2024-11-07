@@ -1,6 +1,6 @@
-import { BackButton } from "@/components/back-button";
-import { Categories } from "@/components/categories";
-import { ImageWithFallback } from "@/components/image-with-fallback";
+import { BackButton } from "@/components/common/back-button";
+import { Categories } from "@/components/article/categories";
+import { ImageWithFallback } from "@/components/common/image-with-fallback";
 import { TArticle } from "@/data/articles";
 import { formatDatetime } from "@/utils/format-datetime";
 

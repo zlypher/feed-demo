@@ -1,5 +1,5 @@
 import { useArticles } from "@/data/articles";
-import { ArticleListItem } from "./article-list-item";
+import { ArticleListItem } from "../article-list/article-list-item";
 import { PropsWithChildren } from "react";
 import { ArticleListItemPlaceholder } from "./article-list-item-placeholder";
 
