@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { defaultMetadata } from "@/utils/metadata";
+import { ReactQueryClientProvider } from "@/components/react-query-client-provider";
 
 export const metadata: Metadata = defaultMetadata;
 
@@ -11,13 +12,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
-      <body>
-        <div className="bg-slate-100 h-screen flex flex-col">
+    <ReactQueryClientProvider>
+      <html lang="de">
+        <body className="bg-gray-200 h-screen flex flex-col">
           {children}
           <Navigation />
-        </div>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ReactQueryClientProvider>
   );
 }

@@ -1,27 +1,20 @@
-import { Feed } from "@/components/feed";
-import { getAllArticles } from "@/data/articles";
+import FeedPage from "@/components/feed/feed-page";
 import { defaultMetadata } from "@/utils/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   ...defaultMetadata,
-  title: "Home | Feed Demo",
+  title: "Feed | Feed Demo",
   description:
     "Find the latest and trending news here. You read it here first.",
   openGraph: {
     ...defaultMetadata.openGraph,
-    title: "Home | Feed Demo",
+    title: "Feed | Feed Demo",
     description:
       "Find the latest and trending news here. You read it here first.",
   },
 };
 
-export default function Home() {
-  const articles = getAllArticles();
-
-  return (
-    <main className="overflow-y-auto flex-1">
-      <Feed articles={articles} />
-    </main>
-  );
+export default function Feed() {
+  return <FeedPage />;
 }
