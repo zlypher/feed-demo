@@ -3,6 +3,7 @@ import { Categories } from "@/components/article/categories";
 import { ImageWithFallback } from "@/components/common/image-with-fallback";
 import { TArticle } from "@/data/articles";
 import { formatDatetime } from "@/utils/format-datetime";
+import { JsonLdNewsArticle } from "../json-ld/news-article";
 
 interface IArticlePageProps {
   article: TArticle;
@@ -45,6 +46,11 @@ export default async function ArticlePage({ article }: IArticlePageProps) {
           <p className="text-gray-700">{article.text}</p>
         </div>
       </main>
+      <JsonLdNewsArticle
+        headline={article.headline}
+        author={{ name: article.author }}
+        datePublished={article.publicationDate}
+      />
     </div>
   );
 }
