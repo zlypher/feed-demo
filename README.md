@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a small demo project for a simple web application with an article feed and article detail pages. Currently, the web app is only optimized for mobile screens with no responsive design. It is based on Next, React and Tailwind.
+
+The web application is currently quite simple. Potential future improvements could include:
+
+* **View Transition API**: Seamless transition between feed and article pages
+* **Preconnect**: Preconnect to important external domains
+* **Preload**: Preload the most important articles (which the user is most likely to click on)
+* **Responsive Design**: Useable designs on screens bigger than mobile
+* **Service Worker**: SW support for offline reading support
+* **Dark Mode**: Dark Mode support for a better reading experience in low light environments
 
 ## Getting Started
 
-First, run the development server:
+For locally development, make sure to install the dependencies and run the `dev` command:
 
 ```bash
+# Install the dependencies
+npm install
+
+# Run the development server locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the project and it will be reachable via `http://localhost:3000`. There are currently no other external dependencies necessary.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run and deploy this project in production, use the `build` and `start` command:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Build the production version of the web application
+npm run build
 
-## Learn More
+# Start the production version
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Testing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project contains some unit and end2end tests. You can run them via the following commands:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Execute unit tests with vitest
+npm run test
 
-## Deploy on Vercel
+# Execute integration test with playwright
+npm run test:e2e
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Issues and bug reports are very welcome. However, at this point in time, code contributions in form of pull requests are NOT accepted. Feel free to fork, reuse or copy any parts of the code and project as you see fit.
+
+## License
+
+MIT
