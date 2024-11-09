@@ -46,7 +46,12 @@ export async function generateStaticParams() {
 }
 
 export default async function Article({ params }: IArticleProps) {
-  const article = getArticleById((await params).id);
+  const id = (await params).id;
+  if (id.includes("error")) {
+    throw new Error("A totally unexpected error happened!");
+  }
+
+  const article = getArticleById(id);
 
   if (!article) {
     notFound();

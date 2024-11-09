@@ -43,9 +43,21 @@ test.describe("Article", () => {
     const response = await page.goto(
       "http://localhost:3000/article/article-does-not-exist"
     );
-    const notFound = page.getByTestId("not-found");
+    const notFound = page.getByTestId("article-not-found");
 
     expect(response?.status()).toBe(404);
     await expect(notFound).toBeVisible();
+  });
+
+  test("should show a custom error page if the article is not available", async ({
+    page,
+  }) => {
+    const response = await page.goto(
+      "http://localhost:3000/article/article-throws-error"
+    );
+    const error = page.getByTestId("article-error");
+
+    expect(response?.status()).toBe(500);
+    await expect(error).toBeVisible();
   });
 });
