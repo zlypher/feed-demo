@@ -1,8 +1,8 @@
 import { TArticle } from "@/data/articles";
-import { Categories } from "../article/categories";
-import { formatDatetime } from "@/utils/format-datetime";
+import { ArticleCategories } from "../article/article-categories";
 import Link from "next/link";
 import { ImageWithFallback } from "../common/image-with-fallback";
+import { ArticleAuthorDate } from "../article/article-author-date";
 
 interface IArticleListItemProps {
   article: TArticle;
@@ -18,7 +18,7 @@ export const ArticleListItem = ({
       className="bg-white rounded-sm overflow-hidden"
       data-testid="article-list-item"
     >
-      <Link href={`/article/${article.id}`}>
+      <Link href={`/article/${article.slug}`}>
         <header className="w-full aspect-video relative">
           <ImageWithFallback
             src={article.headerImageUrl}
@@ -30,13 +30,11 @@ export const ArticleListItem = ({
           />
         </header>
         <div className="p-4 flex flex-col">
-          <Categories categories={article.categories} />
-          <time
-            dateTime={article.publicationDate}
-            className="text-gray-500 text-sm mt-2 mb-4"
-          >
-            {formatDatetime(new Date(article.publicationDate))}
-          </time>
+          <ArticleCategories categories={article.categories} />
+          <ArticleAuthorDate
+            author={article.author}
+            publicationDate={article.publicationDate}
+          />
           <h2 className="text-lg text-gray-800 font-bold mb-2">
             {article.headline}
           </h2>

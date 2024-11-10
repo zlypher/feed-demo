@@ -1,9 +1,9 @@
 import { BackButton } from "@/components/common/back-button";
-import { Categories } from "@/components/article/categories";
+import { ArticleCategories } from "@/components/article/article-categories";
 import { ImageWithFallback } from "@/components/common/image-with-fallback";
 import { TArticle } from "@/data/articles";
-import { formatDatetime } from "@/utils/format-datetime";
 import { JsonLdNewsArticle } from "../json-ld/news-article";
+import { ArticleAuthorDate } from "./article-author-date";
 
 interface IArticlePageProps {
   article: TArticle;
@@ -34,13 +34,11 @@ export default async function ArticlePage({ article }: IArticlePageProps) {
           </h1>
         </header>
         <aside>
-          <Categories className="mb-2" categories={article.categories} />
-          <time
-            dateTime={article.publicationDate}
-            className="block text-gray-500 text-sm mb-4"
-          >
-            {formatDatetime(new Date(article.publicationDate))}
-          </time>
+          <ArticleCategories className="mb-2" categories={article.categories} />
+          <ArticleAuthorDate
+            author={article.author}
+            publicationDate={article.publicationDate}
+          />
         </aside>
         <div data-testid="content">
           <p className="text-gray-700">{article.text}</p>

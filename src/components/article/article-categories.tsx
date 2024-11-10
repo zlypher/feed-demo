@@ -1,15 +1,18 @@
 import { cn } from "@/utils/cn";
 
-interface ICategoriesProps {
+interface IArticleCategoriesProps {
   categories: string[];
   className?: string;
 }
 
-export const Categories = ({ categories, className }: ICategoriesProps) => {
+export const ArticleCategories = ({
+  categories,
+  className,
+}: IArticleCategoriesProps) => {
   return (
     <ul
       className={cn(
-        `flex flex-row gap-4 font-semibold text-sky-700`,
+        `flex flex-row flex-wrap gap-x-4 font-semibold text-sky-700`,
         className
       )}
     >

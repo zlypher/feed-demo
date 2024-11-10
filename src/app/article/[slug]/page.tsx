@@ -1,16 +1,16 @@
 import ArticlePage from "@/components/article/article-page";
-import { TArticle, getAllArticles, getArticleById } from "@/data/articles";
+import { TArticle, getAllArticles, getArticleBySlug } from "@/data/articles";
 import { defaultMetadata } from "@/utils/metadata";
 import { notFound } from "next/navigation";
 
 interface IArticleProps {
   params: Promise<{
-    id: string;
+    slug: string;
   }>;
 }
 
 export async function generateMetadata({ params }: IArticleProps) {
-  const article = getArticleById((await params).id);
+  const article = getArticleBySlug((await params).slug);
   if (!article) {
     return null;
   }
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: IArticleProps) {
     description: article.headline, // Ideally, we would use a short summary here
     openGraph: {
       ...defaultMetadata.openGraph,
-      url: `${domain}article/${article.id}`,
+      url: `${domain}article/${article.slug}`,
       title,
       description: article.headline, // Ideally, we would use a short summary here
       images: article.headerImageUrl,
@@ -41,17 +41,17 @@ export async function generateStaticParams() {
   const articles: TArticle[] = getAllArticles();
 
   return articles.map((article) => ({
-    id: article.id,
+    slug: article.slug,
   }));
 }
 
 export default async function Article({ params }: IArticleProps) {
-  const id = (await params).id;
-  if (id.includes("error")) {
+  const slug = (await params).slug;
+  if (slug.includes("error")) {
     throw new Error("A totally unexpected error happened!");
   }
 
-  const article = getArticleById(id);
+  const article = getArticleBySlug(slug);
 
   if (!article) {
     notFound();

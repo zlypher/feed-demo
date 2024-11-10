@@ -1,5 +1,5 @@
 const formatter = Intl.DateTimeFormat("de-DE", {
-  dateStyle: "long",
+  dateStyle: "short",
   timeStyle: "short",
 });
 
