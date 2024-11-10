@@ -120,5 +120,6 @@ export const useArticles = () => {
   return useQuery({
     queryKey: ["articles"],
     queryFn: () => fetchArticles(),
+    retry: false,
   });
 };

@@ -5,7 +5,7 @@ export async function GET() {
   const articles = getAllArticles();
 
   // To demonstrate potential loading states on the frontend
-  await wait(2000);
+  await wait(1000);
 
   return Response.json(articles);
 }

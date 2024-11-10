@@ -1,6 +1,9 @@
 export const ArticleListItemPlaceholder = () => {
   return (
-    <article className="bg-white rounded-sm overflow-hidden animate-pulse">
+    <article
+      className="bg-white rounded-sm overflow-hidden animate-pulse"
+      data-testid="article-list-item-placeholder"
+    >
       <header className="w-full aspect-video relative bg-gray-300 "></header>
       <div className="p-4 flex flex-col">
         <div className="h-6 w-20 bg-gray-300 "></div>
