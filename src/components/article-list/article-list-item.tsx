@@ -14,7 +14,10 @@ export const ArticleListItem = ({
   priority,
 }: IArticleListItemProps) => {
   return (
-    <article className="bg-white rounded-sm overflow-hidden">
+    <article
+      className="bg-white rounded-sm overflow-hidden"
+      data-testid="article-list-item"
+    >
       <Link href={`/article/${article.id}`}>
         <header className="w-full aspect-video relative">
           <ImageWithFallback
