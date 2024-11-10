@@ -10,8 +10,8 @@ export const ArticleAuthorDate = ({
   publicationDate,
 }: IArticleAuthorDateProps) => {
   return (
-    <div className="text-gray-500 text-sm mt-2 mb-4 flex flex-row flex-wrap gap-1">
-      <span>{author}</span>
+    <div className="text-gray-500 text-sm mt-2 mb-4 flex flex-row flex-wrap gap-1 break-words">
+      <span className="min-w-0">{author}</span>
       <span>&bull;</span>
       <time dateTime={publicationDate} className="">
         {formatDatetime(new Date(publicationDate))}

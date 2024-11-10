@@ -35,7 +35,7 @@ export const ArticleListItem = ({
             author={article.author}
             publicationDate={article.publicationDate}
           />
-          <h2 className="text-lg text-gray-800 font-bold mb-2">
+          <h2 className="text-lg text-gray-800 font-bold mb-2 break-words">
             {article.headline}
           </h2>
         </div>

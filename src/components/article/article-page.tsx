@@ -29,7 +29,7 @@ export default async function ArticlePage({ article }: IArticlePageProps) {
       </div>
       <main className="p-4 flex-1">
         <header>
-          <h1 className="mb-2 text-2xl font-bold text-gray-800">
+          <h1 className="mb-2 text-2xl font-bold text-gray-800 break-words">
             {article.headline}
           </h1>
         </header>
@@ -40,7 +40,7 @@ export default async function ArticlePage({ article }: IArticlePageProps) {
             publicationDate={article.publicationDate}
           />
         </aside>
-        <div data-testid="content">
+        <div data-testid="content" className="break-words">
           <p className="text-gray-700">{article.text}</p>
         </div>
       </main>

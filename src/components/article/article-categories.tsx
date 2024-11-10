@@ -17,7 +17,9 @@ export const ArticleCategories = ({
       )}
     >
       {categories.map((category) => (
-        <li key={category}>{category}</li>
+        <li key={category} className="break-words min-w-0">
+          {category}
+        </li>
       ))}
     </ul>
   );
