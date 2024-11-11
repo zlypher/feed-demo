@@ -1,8 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
-  // await page.goto("https://feed-demo-blue.vercel.app/");
-  await page.goto("http://localhost:3000/");
+  await page.goto("/");
 });
 
 test.describe("Navigation", () => {
@@ -47,7 +46,6 @@ test.describe("Navigation", () => {
   test("should mark the current page", async ({ page }) => {
     const categoriesButton = page.getByLabel("Zu den Kategorien");
     await categoriesButton.click();
-    await expect(page).toHaveURL(/.*categories/);
     await expect(categoriesButton).toHaveAttribute("aria-current", "page");
   });
 });

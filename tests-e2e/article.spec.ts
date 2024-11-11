@@ -1,12 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
-  // await page.goto("https://feed-demo-blue.vercel.app/");
-  // await page.goto("https://feed-demo-blue.vercel.app/article/skifahren-zwischen-lust-frust-und-zukunftsangst");
-  await page.goto("http://localhost:3000/");
-  await page.goto(
-    "http://localhost:3000/article/skifahren-zwischen-lust-frust-und-zukunftsangst"
-  );
+  await page.goto("/");
+  await page.goto("/article/skifahren-zwischen-lust-frust-und-zukunftsangst");
 });
 
 test.describe("Article", () => {
@@ -40,9 +36,7 @@ test.describe("Article", () => {
   test("should show a custom not found page if the article is not available", async ({
     page,
   }) => {
-    const response = await page.goto(
-      "http://localhost:3000/article/article-does-not-exist"
-    );
+    const response = await page.goto("/article/article-does-not-exist");
     const notFound = page.getByTestId("article-not-found");
 
     expect(response?.status()).toBe(404);
@@ -52,9 +46,7 @@ test.describe("Article", () => {
   test("should show a custom error page if the article is not available", async ({
     page,
   }) => {
-    const response = await page.goto(
-      "http://localhost:3000/article/article-throws-error"
-    );
+    const response = await page.goto("/article/article-throws-error");
     const error = page.getByTestId("article-error");
 
     expect(response?.status()).toBe(500);

@@ -45,6 +45,14 @@ npm run test
 npm run test:e2e
 ```
 
+Please be aware, that the end-to-end tests currently don't run 100% reliable.
+
+If you are trying to run the end-to-end tests for the first time, be sure to run the following command to download and install the browsers for Playwright.
+
+```bash
+npx playwright install
+```
+
 ## Contributing
 
 Issues and bug reports are very welcome. However, at this point in time, code contributions in form of pull requests are NOT accepted. Feel free to fork, reuse or copy any parts of the code and project as you see fit.

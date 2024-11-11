@@ -11,7 +11,7 @@ test.describe("Feed", () => {
       await route.fulfill({ response, json });
     });
 
-    await page.goto("http://localhost:3000/");
+    await page.goto("/");
 
     const placeholder = page.getByTestId("article-list-item-placeholder");
     const articlesItems = page.getByTestId("article-list-item");
@@ -31,7 +31,7 @@ test.describe("Feed", () => {
       });
     });
 
-    await page.goto("http://localhost:3000/");
+    await page.goto("/");
 
     const error = page.getByTestId("article-list-error");
 
@@ -41,7 +41,7 @@ test.describe("Feed", () => {
   });
 
   test("should display a list of article items", async ({ page }) => {
-    await page.goto("http://localhost:3000/");
+    await page.goto("/");
 
     const articleItems = page.getByTestId("article-list-item");
 
@@ -51,7 +51,7 @@ test.describe("Feed", () => {
   test("should open the article page after clicking on an article item", async ({
     page,
   }) => {
-    await page.goto("http://localhost:3000/");
+    await page.goto("/");
 
     const firstArticleItem = page.getByTestId("article-list-item").first();
     await firstArticleItem.getByRole("link").click();
